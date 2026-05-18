@@ -1,138 +1,124 @@
-# Quantum Portfolio
+# QuantumOrbit Platform
 
-Simple portfolio for developers, built with React. The page displays profile,
-bio, companies, stacks, projects, language switching (International English and
-Brazilian Portuguese, by default), and light/dark theme.
+Institutional platform and portfolio for QuantumOrbit, developed with Nuxt and Nuxt UI, featuring a futuristic visual identity and presentation of the company's services, team, and projects.
+
+## Overview
+
+The project was structured to serve as the official web platform for QuantumOrbit, focusing on:
+
+- institutional brand positioning
+- presentation of services and differentiators
+- highlight of the current main project, `Nebulos`
+- commercial contact acquisition
+- premium experience with a space-tech visual identity
 
 ## Stack
 
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Radix UI
-- shadcn/ui
-- Lucide React
-- GitHub Pages
-- Optional Docker
+- `Nuxt 4`
+- `Vue 3`
+- `@nuxt/ui`
+- `Tailwind CSS 4`
+- `TypeScript`
+- `pnpm`
 
-## Configure Personal Data
+## Main Sections
 
-Edit the file:
+- `Hero` section with QuantumOrbit orbital identity
+- `Services` focused on web, mobile, and ERP development
+- `Portfolio` currently highlighting the `Nebulos` project
+- `About` section with institutional company context
+- `Team` section with developer cards and details modal
+- `Contact` section with commercial CTA and `mailto` fallback
+
+## Featured Project
+
+### Nebulos
+
+ERP with an internal sales module for clients, built with `Vue/Nuxt` and `Zig`, using the company's proprietary framework.
+
+## Project Structure
+
+```text
+.
+|- app/
+|  |- app.vue
+|  |- app.config.ts
+|  |- assets/
+|  |  |- bg1.png
+|  |  |- bg2.png
+|  |  |- bg3.png
+|  |  |- bg4.png
+|  |  |- bg5.png
+|  |  |- empresa_logo.png
+|  |  |- icon.jpeg
+|  |  |- logo_trasparent.png
+|  |  \- css/main.css
+|  |- components/
+|  |  |- SiteHeader.vue
+|  |  |- SiteFooter.vue
+|  |  \- sections/
+|  \- pages/
+|- public/
+|- nuxt.config.ts
+|- package.json
+\- README.md
+```
+
+## Scripts
 
 ```bash
-app/src/config.ts
+pnpm install
+pnpm dev
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm preview
 ```
 
-This file contains the data displayed in the portfolio:
+## Development Environment
 
-- `fullName`, `nickname`, `title`, `role`, and `bio`
-- `avatarImage` and `avatarFallback`
-- `companies` and `companiesLinks`
-- `primaryStack` and `secondaryStack`
-- `wallpapers.light` and `wallpapers.dark`
-- `projects`
-
-The project has separate data for `en` and `pt-BR`. Update both blocks if
-you want to keep the website bilingual.
-
-To add projects, edit the `projects` list in `app/src/config.ts`:
-
-```ts
-{
-  title: 'Project name',
-  description: 'Short project description',
-  stack: ['React', 'TypeScript', 'Vite'],
-  link: 'https://github.com/your-user/your-project',
-  image: 'https://project-image-url',
-}
-```
-
-Static interface texts, such as labels and section titles, are located in:
+### Install dependencies
 
 ```bash
-app/src/locales/en.ts
-app/src/locales/pt-BR.ts
+pnpm install
 ```
 
-## Run Locally Without Docker
-
-Docker is not required. To run directly on your machine:
+### Run locally
 
 ```bash
-cd app
-npm install
-npm run dev
+pnpm dev
 ```
 
-Open the URL shown by Vite, usually:
+Application available at `http://localhost:3000`.
+
+### Validate quality
 
 ```bash
-http://localhost:5173
+pnpm lint
+pnpm typecheck
+pnpm build
 ```
 
-To test the production build:
+## Deployment
+
+Production build:
 
 ```bash
-cd app
-npm run build
-npm run preview
+pnpm build
 ```
 
-## Run Locally With Docker
-
-Docker is only an alternative for running the environment without installing
-Node directly on your machine.
-
-Install dependencies inside the container:
+Local build preview:
 
 ```bash
-docker compose -f scripts/docker-compose.yml run --rm portfolio npm install
+pnpm preview
 ```
 
-Then start the project:
+## Notes
 
-```bash
-./scripts/run.sh
-```
+- The repository is private and code distribution is restricted.
+- Local operational files, agent context files, and build outputs are ignored by `.gitignore`.
 
-Open:
+## Ownership
 
-```bash
-http://localhost:5173
-```
-
-## Configure GitHub Pages
-
-The deployment workflow is located at:
-
-```bash
-.github/workflows/deploy.yml
-```
-
-It runs whenever there is a push to the `main` branch, installs dependencies,
-builds the project into `app/dist`, and publishes it to GitHub Pages.
-
-On GitHub, configure:
-
-1. Open the repository `Settings`.
-2. Go to `Pages`.
-3. In `Build and deployment`, select `GitHub Actions`.
-4. Push to the `main` branch.
-
-If this repository is published as a user or organization page, for example
-`user.github.io`, the current Vite configuration already works.
-
-If it is published as a project page, for example
-`user.github.io/repository-name`, add the `base` option in
-`app/vite.config.ts`:
-
-```ts
-export default defineConfig({
-  base: '/repository-name/',
-  plugins: [react(), tailwindcss()],
-  // ...
-});
-```
-
-Then commit the changes and push them to the `main` branch.
+This project is a private asset of QuantumOrbit.
+Refer to the `LICENSE` file for usage, copying, and redistribution restrictions.

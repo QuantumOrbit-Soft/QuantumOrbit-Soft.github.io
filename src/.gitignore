@@ -1,0 +1,45 @@
+# Nuxt dev/build outputs
+.output/
+.data/
+.nuxt/
+.nitro/
+.cache/
+dist/
+
+# Dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+.fleet/
+.idea/
+.vscode/
+
+# Local agent/task context
+AGENTS/
+
+# Cloudflare local files
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Coverage and temp files
+coverage/
+*.tmp
+*.temp
+
+# pnpm
+.pnpm-store/
